@@ -23,10 +23,37 @@ function getGameScore() {
   });
 }
 
+// Dependent Promise Calls (Not actually but has the run time as if it was one by one)
 async function getWinner() {
-  let gameWinner = await getGameWinner();
-  let gameScore = await getGameScore();
-  console.log("Major Winner:", gameWinner, gameScore);
+  try {
+    let gameWinner = await getGameWinner();
+    let gameScore = await getGameScore();
+    console.log("(Dependent) Major Winner:", gameWinner, gameScore);
+  } catch (err) {
+    console.log(err);
+  }
 }
 
-getWinner();
+// Concurrent Promise Calls
+async function getWinner2() {
+  try {
+    let gameWinner = getGameWinner();
+    let gameScore = getGameScore();
+    console.log(
+      "(Concurrent) Major Winner:",
+      await gameWinner,
+      await gameScore,
+    );
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function allGetWinner() {
+  try {
+    let arrPromise = await Promise.all([getGameScore(), getGameWinner()]);
+    console.log(arrPromise);
+  } catch (error) {
+    console.log(error);
+  }
+}
