@@ -1,11 +1,16 @@
+// PROCESSING THE FORM SUBMISSION
+// Function invoked on 'submit' event of #contact-form
 $("#contact-form").on("submit", function (event) {
+  // Prevents default reloading of the page upon form submission
   event.preventDefault();
 
+  // Assigns the value from each form input to a variable
   let $firstName = $("#firstName").val();
   let $lastName = $("#lastName").val();
   let $phoneNumber = $("#phoneNumber").val();
   let $address = $("#address").val();
 
+  // Models the contact as an object (provides easier access to the value for me)
   function contact(firstName, lastName, phoneNumber, address) {
     return {
       firstName,
@@ -18,54 +23,50 @@ $("#contact-form").on("submit", function (event) {
     };
   }
 
+  // Creates a new instance of the object for the new Contact
   let newContact = contact($firstName, $lastName, $phoneNumber, $address);
-  console.log(contact.name);
 
+  // Creates HTML elements for the contact card (assigns classes,
+  // interpolates the data from the form submission)
   let $nameCard = $("<div>").addClass("card-element");
-  let nameCardTitle = $("<h5>")
-    .addClass("card-title")
-    .text("Name:")
-    .appendTo($nameCard);
   let nameCardText = $("<p>")
     .addClass("card-text")
     .html(`<strong>Name: </strong>${newContact.name}`)
     .appendTo($nameCard);
 
   let $phoneCard = $("<div>").addClass("card-element");
-  let phoneNumberCardTitle = $("<h5>")
-    .addClass("card-title")
-    .text("Phone Number:")
-    .appendTo($phoneCard);
   let phoneCardText = $("<p>")
     .addClass("card-text")
-    .text(newContact.phoneNumber)
+    .html(`<strong>Phone Number: </strong>${newContact.phoneNumber}`)
     .appendTo($phoneCard);
 
   let $addressCard = $("<div>").addClass("card-element");
-  let addressCardTitle = $("<h5>")
-    .addClass("card-title")
-    .text("Address:")
-    .appendTo($addressCard);
   let addressCardText = $("<p>")
     .addClass("card-text")
-    .text(newContact.address)
+    .html(`<strong>Address: </strong>${newContact.address}`)
     .appendTo($addressCard);
 
+  // Appends the
   let $contactCard = $("<div>")
     .addClass("contact-card")
     .append($nameCard, $phoneCard, $addressCard)
-    .appendTo(".contacts");
+    .appendTo(".container");
 });
 
-// When there is a change in the search bar
+// SEARCH BAR
+// When there is a change in the search bar (i.e. a key is pressed)
 // The current search is compared against the text in each card
 // If there is a match, the card is shown, if not it is hidden
 
 $("#search-bar").on("keyup", function (event) {
-  let $searchEntry = $(this).val().toLowerCase(); // current search bar value
+  let $searchBarEntry = $(this).val().toLowerCase();
   $(".contact-card").each(function () {
-    let search = $(this).text().toLowerCase();
-    if (search.indexOf($searchEntry) > -1) {
+    let $contactCardData = $(this).text().toLowerCase();
+    $contactCardData = $contactCardData
+      .replace("name:", "")
+      .replace("phone number:", "")
+      .replace("address:", "");
+    if ($contactCardData.indexOf($searchBarEntry) > -1) {
       $(this).show();
     } else {
       $(this).hide();

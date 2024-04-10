@@ -1,34 +1,44 @@
+
 html, body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100%
     width: 100%;
     margin: 0;
+    background-color: #F8F8F8;
 }
 
 .container {
     height: 100%;
     display: grid;
-    grid-template-columns: minmax(150px, 300px) repeat(4, 1fr);
-    grid-template-rows: repeat(3, auto);
+    grid-template-columns: minmax(9.375rem, 18.75rem) repeat(4, 1fr);
+    grid-template-rows: repeat(10, auto);
+    gap: 0.625rem;
 }
 
 .sidebar {
+    height: 100%;
     grid-column: 1/2;
-    grid-row: 1/5;
-    background-color: #DEDEDE;
+    grid-row: 1/11;
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: #fff;
 }
 
-.contact {
-    grid-column: 2/4;
-    grid-row: 1/5;
+#header {
+    margin-top: 3.125rem;
+    text-align: left;
 }
 
-/* .form-wrapper {
-    width: 20%;
-} */
+#secondary-header {
+    margin-top: 1.5625rem;
+    margin-bottom: 0.625rem;
+}
+
+label {
+    color: #4F4F4F;
+    font-size: 0.8125rem;
+}
 
 form input,
 button {
@@ -36,12 +46,27 @@ button {
 }
 
 .form-element {
-    margin-top: 10px;
+    margin-bottom: 0.625rem;
 }
 
+.contact-input, #search-bar, #form-submit {
+    width: 10rem;
+    border: solid 0.0625rem #B0B0B0;
+    padding: 0.3125rem;
+    border-radius: 0.315rem;
+}
+
+.contact-input {
+    margin-top: 0.2rem;
+}
 
 .contact-card {
-    border: solid 1px #333;
-    border-radius: 10px;
-    padding: 10px 20px;
+    border: solid 0.0625rem #E0E0E0;
+    border-radius: 0.625rem;
+    padding: 0.625rem 1.25rem;
+    background-color: white;
+    margin: 0;
+    height: fit-content;
+    justify-self: center;
+    align-self: center;
 }

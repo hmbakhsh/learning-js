@@ -8,69 +8,79 @@
     <body>
         <div class="container">
             <div class="sidebar">
-                <h1>Address Book</h1>
-                <input id="search-bar" type="text" />
+                <div class="sidebar-head">
+                    <h3 id="header">Address Book</h3>
+                    <input
+                        id="search-bar"
+                        type="text"
+                        placeholder="Search..."
+                    />
+                </div>
                 <div class="form-wrapper">
                     <form id="contact-form">
+                        <h4 id="secondary-header">Add Contact</h4>
                         <div class="form-element">
                             <label for="firstName">First Name</label>
-                            <input type="text" id="firstName" required />
+                            <input
+                                type="text"
+                                id="firstName"
+                                class="contact-input"
+                                required
+                            />
                         </div>
 
                         <div class="form-element">
                             <label for="lastName">Last Name</label>
-                            <input type="text" id="lastName" required />
+                            <input
+                                type="text"
+                                id="lastName"
+                                class="contact-input"
+                                required
+                            />
                         </div>
 
                         <div class="form-element">
                             <label for="phoneNumber">Phone Number</label>
-                            <input type="tel" id="phoneNumber" required />
+                            <input
+                                type="tel"
+                                id="phoneNumber"
+                                class="contact-input"
+                                required
+                            />
                         </div>
 
                         <div class="form-element">
                             <label for="address">Address</label>
-                            <input type="text" id="address" required />
+                            <input
+                                type="text"
+                                id="address"
+                                class="contact-input"
+                                required
+                            />
                         </div>
-
-                        <input type="submit" />
+                        <input id="form-submit" type="submit" />
                     </form>
                 </div>
             </div>
-            <div class="contacts">
-                <!-- <div class="contact-card">
-                    <div class="card-element">
-                        <h5 class="card-title">Name:</h5>
-                        <p class="card-text">Haroon Bakhsh</p>
-                    </div>
 
-                    <div class="card-element">
-                        <h5 class="card-title">Phone Number:</h5>
-                        <p class="card-text">07588191009</p>
-                    </div>
-
-                    <div class="card-element">
-                        <h5 class="card-title">Address:</h5>
-                        <p class="card-text">48 Rosebery Gardens</p>
-                    </div>
+            <div class="contact-card">
+                <div class="card-element">
+                    <p class="card-text">
+                        <strong>Name: </strong>Haroon Bakhsh
+                    </p>
                 </div>
-
-                <div class="contact-card">
-                    <div class="card-element">
-                        <h5 class="card-title">Name:</h5>
-                        <p class="card-text">Adam Smith</p>
-                    </div>
-
-                    <div class="card-element">
-                        <h5 class="card-title">Phone Number:</h5>
-                        <p class="card-text">07870619313</p>
-                    </div>
-
-                    <div class="card-element">
-                        <h5 class="card-title">Address:</h5>
-                        <p class="card-text">37 Hampden Way</p>
-                    </div>
-                </div> -->
+                <div class="card-element">
+                    <p class="card-text">
+                        <strong>Phone Number: </strong>07588191009
+                    </p>
+                </div>
+                <div class="card-element">
+                    <p class="card-text">
+                        <strong>Address: </strong>48 Rosebery Gardens
+                    </p>
+                </div>
             </div>
         </div>
     </body>
 </html>
+;
