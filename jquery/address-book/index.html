@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>HBAK: Address Book</title>
+        <title>Address Book by HBak</title>
         <link rel="stylesheet" href="main.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="main.js" defer></script>
@@ -12,6 +12,7 @@
                     <h3 id="header">Address Book</h3>
                     <input
                         id="search-bar"
+                        class="button-styled"
                         type="text"
                         placeholder="Search..."
                     />
@@ -24,7 +25,7 @@
                             <input
                                 type="text"
                                 id="firstName"
-                                class="contact-input"
+                                class="contact-input button-styled"
                                 required
                             />
                         </div>
@@ -34,7 +35,7 @@
                             <input
                                 type="text"
                                 id="lastName"
-                                class="contact-input"
+                                class="contact-input button-styled"
                                 required
                             />
                         </div>
@@ -44,7 +45,7 @@
                             <input
                                 type="tel"
                                 id="phoneNumber"
-                                class="contact-input"
+                                class="contact-input button-styled"
                                 required
                             />
                         </div>
@@ -54,30 +55,16 @@
                             <input
                                 type="text"
                                 id="address"
-                                class="contact-input"
+                                class="contact-input button-styled"
                                 required
                             />
                         </div>
-                        <input id="form-submit" type="submit" />
+                        <input
+                            id="form-submit"
+                            class="button-styled"
+                            type="submit"
+                        />
                     </form>
-                </div>
-            </div>
-
-            <div class="contact-card">
-                <div class="card-element">
-                    <p class="card-text">
-                        <strong>Name: </strong>Haroon Bakhsh
-                    </p>
-                </div>
-                <div class="card-element">
-                    <p class="card-text">
-                        <strong>Phone Number: </strong>07588191009
-                    </p>
-                </div>
-                <div class="card-element">
-                    <p class="card-text">
-                        <strong>Address: </strong>48 Rosebery Gardens
-                    </p>
                 </div>
             </div>
         </div>

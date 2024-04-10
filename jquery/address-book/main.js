@@ -46,11 +46,22 @@ $("#contact-form").on("submit", function (event) {
     .html(`<strong>Address: </strong>${newContact.address}`)
     .appendTo($addressCard);
 
-  // Appends the
+  let $removeContactButton = $("<button>");
+  $removeContactButton
+    .addClass("rm-contact button-styled")
+    .text("Remove Contact");
+
+  // Appends card elements created above to a div (.'contact-card')
+  // which is then appended to .container
   let $contactCard = $("<div>")
     .addClass("contact-card")
-    .append($nameCard, $phoneCard, $addressCard)
+    .append($nameCard, $phoneCard, $addressCard, $removeContactButton)
     .appendTo(".container");
+
+  $(".rm-contact").on("click", function () {
+    let $contactCard = $(this).parent();
+    $contactCard.remove();
+  });
 });
 
 // SEARCH BAR

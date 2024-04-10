@@ -1,4 +1,3 @@
-
 html, body {
     font-family: Arial, Helvetica, sans-serif;
     height: 100%
@@ -49,15 +48,15 @@ button {
     margin-bottom: 0.625rem;
 }
 
-.contact-input, #search-bar, #form-submit {
+.contact-input {
+    margin-top: 0.2rem;
+}
+
+.button-styled {
     width: 10rem;
     border: solid 0.0625rem #B0B0B0;
     padding: 0.3125rem;
     border-radius: 0.315rem;
-}
-
-.contact-input {
-    margin-top: 0.2rem;
 }
 
 .contact-card {
