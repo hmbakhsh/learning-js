@@ -65,6 +65,9 @@ $("#contact-form").on("submit", function (event) {
 });
 
 // SEARCH BAR
+// Learnt about this implementation through: https://www.youtube.com/watch?v=bmaCHGn7TEg
+// And rewrote it for my specific needs
+
 // When there is a change in the search bar (i.e. a key is pressed)
 // The current search is compared against the text in each card
 // If there is a match, the card is shown, if not it is hidden
@@ -77,7 +80,7 @@ $("#search-bar").on("keyup", function (event) {
       .replace("name:", "")
       .replace("phone number:", "")
       .replace("address:", "");
-    if ($contactCardData.indexOf($searchBarEntry) > -1) {
+    if ($contactCardData.indexOf($searchBarEntry) >= 0) {
       $(this).show();
     } else {
       $(this).hide();

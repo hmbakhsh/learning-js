@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2017", // Set target to ES2017 or later to support async/await
+    "module": "ESNext",
+    "outDir": "./dist", // Output directory for compiled files
+    "rootDir": "./src", // Root directory of your source files
+    "strict": true, // Enable all strict type-checking options
+    "moduleResolution": "node",
+    "esModuleInterop": true // Enables ES6 module compatibility
+  },
+  "include": [
+    "./**/*.ts" // Include all TypeScript files in src directory
+  ],
+  "exclude": [
+    "node_modules" // Exclude node_modules from compilation process
+  ]
+}
